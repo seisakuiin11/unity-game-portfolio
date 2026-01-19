@@ -1,0 +1,428 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: e556c30ccfb9de94f88cd51823c80ee3
+  m_SerializeEntries:
+  - m_GUID: 028228935e45fcd47ac44321229b2deb
+    m_Address: "Assets/3.\u7D20\u6750/Card/W001.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 04eef8d70ff18c546973d0519b5a4a02
+    m_Address: "Assets/3.\u7D20\u6750/Card/C135.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 062d6f00c9a4cca47b2663fd5461d06b
+    m_Address: "Assets/3.\u7D20\u6750/Card/C312.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 097ed9ca318eb894a910a5d45b14a03d
+    m_Address: "Assets/3.\u7D20\u6750/Card/E003.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0f240dfdd04341a4fa7a740814ce188d
+    m_Address: "Assets/3.\u7D20\u6750/Card/C234.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 123038a0a1e8262409c5fe8df388106f
+    m_Address: "Assets/3.\u7D20\u6750/Card/C232.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13a3d33f538c95d44b59390d5e0cc30d
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30AB\u30A4\u30C8_\u30CA\u30A4\u30C8\u30FB\u30AA\u30D6\u30FB\u30AD\u30F3\u30B0.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ce9bc630a701c24fbfb3a11f4dd4fcc
+    m_Address: "Assets/3.\u7D20\u6750/Card/C331.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21c73ff1cca6dd447b9ac578046a3926
+    m_Address: "Assets/3.\u7D20\u6750/Card/C134.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24dfa9a2dac6e99449b296a78987587a
+    m_Address: "Assets/3.\u7D20\u6750/Card/E001.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 261f6a6590c33274e94ce3f8c9ce6d25
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30A2\u30EA\u30CA_\u8328\u59EB.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 298a228194a0e484f84e3f3889d8ab22
+    m_Address: "Assets/3.\u7D20\u6750/Card/N001.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d66d9aed66c541418afc9019d58f6e8
+    m_Address: "Assets/3.\u7D20\u6750/Card/C214.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 316b6bcd4ca1c8e4c8a5141c1cf954a2
+    m_Address: "Assets/3.\u7D20\u6750/Card/C334.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38cd3823100634d418ce3414ebfb6d48
+    m_Address: "Assets/3.\u7D20\u6750/Card/C221.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3988d2bd2a7fe2b4bb9b354106a9251a
+    m_Address: "Assets/3.\u7D20\u6750/Card/I001.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e1d580eae3d9c140ae4fd9f8d34f051
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-1.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43f9c42518be2bc42afc3b64049fe7da
+    m_Address: "Assets/3.\u7D20\u6750/Card/I003.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44b0daccc34f8124bb8af359529513a3
+    m_Address: "Assets/3.\u7D20\u6750/Card/C321.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 468382a68f48f864a81d47b08c86473d
+    m_Address: "Assets/3.\u7D20\u6750/Card/C122.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d1bb345b3d82204d8c2a89451fca3f1
+    m_Address: "Assets/3.\u7D20\u6750/Card/C222.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 566d782c8165cf74681aab5e3bc93315
+    m_Address: "Assets/3.\u7D20\u6750/Card/I002.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 59640a1755620ac4482a1ea70a35257d
+    m_Address: "Assets/3.\u7D20\u6750/Card/C235.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dd9c4ba98b5e9647aec1be5e1979e5f
+    m_Address: "Assets/3.\u7D20\u6750/Card/E201.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5feca1ac95bf8fd4b9c786288b4077ad
+    m_Address: "Assets/3.\u7D20\u6750/Card/C115.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64f7b7c7ca227b443a263f8f7172b174
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30AB\u30A4\u30C8_\u30CE\u30FC\u30DE\u30EB.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6654ac0ad3a47db419342a34b6b7ab9c
+    m_Address: "Assets/3.\u7D20\u6750/Card/C311.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 699c388af1260e045930533666c5dde7
+    m_Address: "Assets/3.\u7D20\u6750/Card/W003.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6eaea9a8646bd0e4e9274a5f859ab167
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_2-1.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70e4e59122133314d8c808b48848bbc0
+    m_Address: "Assets/3.\u7D20\u6750/Card/C315.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7bd3fe4cb8166c743b2501fd686a5d22
+    m_Address: "Assets/3.\u7D20\u6750/Card/C114.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f28da8c6f374d54ebcf60ca73dafb51
+    m_Address: "Assets/3.\u7D20\u6750/Card/C231.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fec7b780f6cbcb45afb680b7a0f628f
+    m_Address: "Assets/3.\u7D20\u6750/Card/C313.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8234b168667b04e49807629426be7b4e
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_1-3.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89a7bdbee52bc3c4e8f49a88381ad635
+    m_Address: "Assets/3.\u7D20\u6750/Card/C132.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e92f4746c4683a4dab2815101f31e8e
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30EC\u30A4\u30AC_\u30CE\u30FC\u30DE\u30EB.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ee673c3155933145be9e962e14c9111
+    m_Address: "Assets/3.\u7D20\u6750/Card/C121.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9166dfed31e7cdf46aad50e96b59e842
+    m_Address: "Assets/3.\u7D20\u6750/Card/C123.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 94664ced59a601843bb030dbc9f295b0
+    m_Address: "Assets/3.\u7D20\u6750/Card/C324.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 969e949c9bd502548a7a49a10a9ad410
+    m_Address: "Assets/3.\u7D20\u6750/Card/W301.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e0de33313f8019408821a82c23f3d3e
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_2-2.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e1da979cf814e14790690e3f316e883
+    m_Address: "Assets/3.\u7D20\u6750/Card/W002.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2cbe601a6536b645b6642c24f501829
+    m_Address: "Assets/3.\u7D20\u6750/Card/C133.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3e99aa4457fc584bb22e130712f5e22
+    m_Address: "Assets/3.\u7D20\u6750/Card/E005.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a65b5e3b7096cd343ada827d33f5d2fa
+    m_Address: "Assets/3.\u7D20\u6750/Card/C335.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa54c88c6f131164ba567205c336a0c4
+    m_Address: "Assets/3.\u7D20\u6750/Card/C325.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3e9575f260565544993c25880449cb2
+    m_Address: "Assets/3.\u7D20\u6750/Card/C211.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b466b6ce7099f4d45a505af4ee6fbad5
+    m_Address: "Assets/3.\u7D20\u6750/Card/W101.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5273591e8f25a24a8395582a75357c5
+    m_Address: "Assets/3.\u7D20\u6750/Card/W004.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b723192dfec4a04428dc77fb8acf144f
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_2-3.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b909ef76cbbdc3545bd92e942919fc32
+    m_Address: "Assets/3.\u7D20\u6750/Card/C322.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9295bebb4d3b224084bf2319b19adce
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_1-1.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba7833f16cdfbb641a9aea9661e65aa0
+    m_Address: "Assets/3.\u7D20\u6750/Card/I004.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bbd89fa7450c691419dcfa7cee385500
+    m_Address: "Assets/3.\u7D20\u6750/Card/C112.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c141a538f3d71754ea08382be202acfe
+    m_Address: "Assets/3.\u7D20\u6750/Card/C233.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1d197f150723a7448dbaec76a759d6d
+    m_Address: "Assets/3.\u7D20\u6750/Card/C213.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3839b61082edd64ea325415ff4116de
+    m_Address: "Assets/3.\u7D20\u6750/Card/C223.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c471606ce30856c4aad6a8be1da7ffaf
+    m_Address: "Assets/3.\u7D20\u6750/Card/C111.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c69e938c80b9b924aade0f208244af51
+    m_Address: "Assets/3.\u7D20\u6750/Card/E004.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: caa6eae0e9bf8c54dba773ff0d2648af
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30A2\u30EA\u30CA_\u30CE\u30FC\u30DE\u30EB.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da8686d268e05fc478f08232b623ba15
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30AB\u30A4\u30C8_\u30AD\u30E3\u30C3\u30B9\u30EB.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dab5887bf66c123458e83559a697fc6a
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30A2\u30EA\u30CA_\u30A2\u30A4\u30B9\u30AF\u30A4\u30FC\u30F3.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db347fc34dad51a4e8aac1b5def23254
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_1-2.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0639bcdf805f2d468e700db9e98f824
+    m_Address: "Assets/3.\u7D20\u6750/Card/C323.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e2dbe16009360744db14b433e175d19c
+    m_Address: "Assets/3.\u7D20\u6750/Card/C224.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e37d1ae86e468a84abe946230d09f08f
+    m_Address: "Assets/3.\u7D20\u6750/Card/C332.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e85eabcf8fe3afa45ade7c07037a0c28
+    m_Address: "Assets/3.\u7D20\u6750/Card/C131.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9873e3635e6aee48ba436ba6bbe6636
+    m_Address: "Assets/3.\u7D20\u6750/Card/E002.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9a7085e9b8a88040ac820f6c7cbeaec
+    m_Address: "Assets/3.\u7D20\u6750/Card/C125.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea89113bf43c1d94ebf4246cb74cb919
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30EC\u30A4\u30AC_\u30C0\u30FC\u30AF\u30D2\u30FC\u30ED\u30FC.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb48a4152dc0690419cfa06d1e7ee458
+    m_Address: "Assets/3.\u7D20\u6750/Card/I005.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecb1a4b47f47d014bbe850cd2b836f72
+    m_Address: "Assets/3.\u7D20\u6750/Card/C124.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: edfc2e42376b77d419fd119c96f0ffa5
+    m_Address: "Assets/3.\u7D20\u6750/Card/C215.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee5fbbc4127cd6948b7b8cfebb4b98e2
+    m_Address: "Assets/3.\u7D20\u6750/Character/\u30EC\u30A4\u30AC_\u30D2\u30FC\u30ED\u30FC.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef7d8302713438848809791e809da779
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-2.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3510d3e05b3fa44890c6b63102f8504
+    m_Address: "Assets/3.\u7D20\u6750/Card/C225.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f5d4bd52f00d5d94f8657e33ff9a471c
+    m_Address: "Assets/3.\u7D20\u6750/Card/C314.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f602175326860d74fa501d3f0b52814d
+    m_Address: "Assets/3.\u7D20\u6750/Card/C333.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f647b554939964547bc3cecd2a980be2
+    m_Address: "Assets/3.\u7D20\u6750/Card/C113.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb1182566548de04fa1b5062efb4e32d
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-3.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff1a3b71620d0394baff6bc136cdf865
+    m_Address: "Assets/3.\u7D20\u6750/Card/C212.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: eec79f0cbca289543bb890f6d589f389, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7c8b812540d5ee84c825162ad7ef4b33, type: 2}
+    - {fileID: 11400000, guid: 11a02b00c96da8848a1e454b03bd1c6c, type: 2}
