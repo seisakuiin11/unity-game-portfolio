@@ -10,18 +10,17 @@ Unityで制作したカードゲームです。
 ## 使用技術
 - Unity 6000.0.43f1
 - C#
-- Google / DOTween（使っていれば）
+- Google / DOTween
 - GitHub / GitHub Desktop
 
-## このプロジェクトで工夫した点（★重要）
-- 
+## このプロジェクトで工夫した点
 
 ## 見てほしいコード
 - CharacterScript.cs
   `Assets/1.スクリプト/CharacterScript.cs`
 
 ## 動作デモ
-- 現在制作中
+現在制作中
 
 ## 制作期間
 現在制作中
