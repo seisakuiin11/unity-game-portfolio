@@ -1,6 +1,7 @@
 # unity-game-portfolio
 
 # プロジェクト名
+スキルマスター
 
 ## 概要
 Unityで制作したカードゲームです。
@@ -16,10 +17,11 @@ Unityで制作したカードゲームです。
 - 
 
 ## 見てほしいコード
-- 
+- CharacterScript.cs
+  `Assets/1.スクリプト/CharacterScript.cs`
 
 ## 動作デモ
-- 
+- 現在制作中
 
 ## 制作期間
 現在制作中
