@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using CommonData;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour
         MaxScene
     }
 
+    [SerializeField] AudioManager audioManager;
+
     [System.Serializable]
     class SceneName {
         public Scene scene;
@@ -24,6 +28,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] SceneName[] sceneNames;
     SceneName scene;
     [SerializeField] DataBaseManager dataBaseManager;
+
+    // 各ステージのクリア状況と敵情報
+    [SerializeField] Stage[] stages;
 
     /// <summary> 何番目のセーブデータを使用するか </summary>
     public int saveDataIndex = 0;
@@ -40,6 +47,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         instance = this;
+        audioManager.Init();
 
         Screen.SetResolution(1920, 1080, FullScreenMode.FullScreenWindow);
         QualitySettings.vSyncCount = 0;
@@ -70,4 +78,26 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(scene.name);
     }
     public Scene GetScene() { return scene.scene; }
+
+    public Stage GetStageData()
+    {
+        return stages[stageIndex];
+    }
+
+    public bool[] GetStageClearFlags()
+    {
+        bool[] flags = new bool[stages.Length];
+
+        for (int i = 0; i < stages.Length; i++)
+        {
+            flags[i] = stages[i].clearFlag;
+        }
+
+        return flags;
+    }
+
+    public void StageClear()
+    {
+        stages[stageIndex].clearFlag = true;
+    }
 }

@@ -36,7 +36,7 @@ public class EnemyScript : CharacterScript
 
         skillID = _skillID;
         SetSkillID(skillID);
-        enemyController.SelectMode(this, actionOfSelectType[typeID, skillID]);
+        enemyController.SelectMode(this, defultAttackDatas[typeID, skillID].Select);
 
         await Task.Delay(waitTime);
         // 二回行動　連続行動がメイン(仮)　別キャラまたぐのはやらないかも
@@ -57,18 +57,35 @@ public class EnemyScript : CharacterScript
             { Attack, AllAttack }, // 通常状態
         };
         // スキルの選択対象
-        actionOfSelectType = new SelectMode[1, 2] {
-            { SelectType.AllySingle, SelectType.AllyAll }, // 通常状態
+        defultAttackDatas = new AttackData[1, 2] {
+            { SetDefultAttack01(), SetDefultAttack02() }, // 通常状態
         };
     }
 
     /*** -------------------- 通常状態(テスト) ID: 0 ----------------------- ***/
-
+    AttackData SetDefultAttack01()
+    {
+        return new AttackData()
+        {
+            Name = "通常攻撃",
+            Select = SelectMode.Single | SelectMode.Ally,
+            Text = () => $"敵一体に攻撃力{defultAttackMultiplier}％のダメージを与える"
+        };
+    }
     async Task Attack(Targets target) // ID: 0
     {
         await Task.Delay(100);
 
         AttackAction(target.target, at);
+    }
+    AttackData SetDefultAttack02()
+    {
+        return new AttackData()
+        {
+            Name = "薙ぎ払い",
+            Select = SelectMode.All | SelectMode.Ally,
+            Text = () => $"敵全体に攻撃力{defultAttackMultiplier}％のダメージを与える"
+        };
     }
     async Task AllAttack(Targets target) // ID: 1
     {

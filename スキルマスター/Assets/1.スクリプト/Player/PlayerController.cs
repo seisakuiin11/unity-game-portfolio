@@ -214,7 +214,7 @@ public class PlayerController : MonoBehaviour
     public void StartTurn()
     {
         turn = true;
-        dekki.skillPhase = true;
+        dekki.SetSkillPhase(true);
         int drawNum = 1;
 
         // 残りターン確認
@@ -243,8 +243,7 @@ public class PlayerController : MonoBehaviour
     public void AttackPhase()
     {
         foreach (var chara in characters) chara.ChangePhase(Player.MyAttackFase);
-        dekki.skillPhase = false;
-        dekki.useCardNum = -1;
+        dekki.SetSkillPhase(false);
     }
 
     /*** ターゲット選択(AP確認) ***/
@@ -343,7 +342,7 @@ public class PlayerController : MonoBehaviour
             buffDatas[i].EndAction(null);
             buffDatas.RemoveAt(i);
         }
-        foreach (var chara in characters) chara.CheckTurnProgress();
+        foreach (var chara in characters) { chara.CheckTurnProgress(); chara.ChangePhase(Player.Mine); }
     }
 
     public bool CheckGameOver()

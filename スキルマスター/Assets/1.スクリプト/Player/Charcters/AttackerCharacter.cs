@@ -25,10 +25,10 @@ public class AttackerCharacter : CharacterScript
             { AllAttack, Skill_31,Skill_32, Skill_33, Skill_34, Skill_35 }, // 覚醒：ヒーロー
         };
         // 通常攻撃の選択対象
-        actionOfSelectType = new SelectMode[3, 1] {
-            { SelectType.EnemySingle }, // 通常状態
-            { SelectType.EnemySingle }, // 覚醒：ヒーロー
-            { SelectType.EnemyAll }, // 覚醒：ダークヒーロー
+        defultAttackDatas = new AttackData[3, 1] {
+            { SetDefultAttack01() }, // 通常状態
+            { SetDefultAttack01() }, // 覚醒：ヒーロー
+            { SetDefultAttack03() }, // 覚醒：ダークヒーロー
         };
     }
 
@@ -86,6 +86,14 @@ public class AttackerCharacter : CharacterScript
     // ---------------------
     // 通常攻撃
     // ---------------------
+    AttackData SetDefultAttack01()
+    {
+        return new AttackData() {
+            Name = "通常攻撃",
+            Select = SelectMode.Single | SelectMode.Enemy,
+            Text = () => $"敵一体に攻撃力{defultAttackMultiplier}％のダメージを与える"
+        };
+    }
     async Task Attack(Targets target) // ID: 0
     {
         // 攻撃アニメーション
@@ -114,10 +122,14 @@ public class AttackerCharacter : CharacterScript
             foreach (var chara in tg.enemyTarget) ef.Slash(chara.AnimPos);
             await Task.Delay(500);
             AttackAction(tg.enemyTarget, at * vl * 0.01f);
+
+            // 攻撃アニメーション
+            var p = charaImg.transform.position.x + (0.5f * (player == Player.Mine ? 1 : -1));
+            charaImg.transform.DOMoveX(p, 0.05f).SetLoops(2, LoopType.Yoyo);
         };
 
         // 攻撃セット
-        ChangeAction(skillData.Name, (SelectMode)skillData.SelectId, ac);
+        ChangeAction(skillData, ac);
     }
 
     // ---------------------
@@ -313,7 +325,7 @@ public class AttackerCharacter : CharacterScript
 
                 AttackAction(skillTarget, at * skillValue2 * 0.01f);
                 // 対象が死んだら、選択対象リストから消す
-                if (skillTarget.dedFlag) target.canSelectTarget.RemoveAt(num);
+                if (skillTarget.dedFlag) target.canSelectTarget.Remove(skillTarget);
             }
         };
 
@@ -330,6 +342,15 @@ public class AttackerCharacter : CharacterScript
     // ---------------------
     // 通常攻撃
     // ---------------------
+    AttackData SetDefultAttack03()
+    {
+        return new AttackData()
+        {
+            Name = "通常攻撃",
+            Select = SelectMode.All | SelectMode.Enemy,
+            Text = () => $"敵全体に攻撃力{defultAttackMultiplier}％のダメージを与える"
+        };
+    }
     async Task AllAttack(Targets target) // ID: 1
     {
         // エフェクト
@@ -370,10 +391,14 @@ public class AttackerCharacter : CharacterScript
             // 攻撃
             int vl = Mathf.RoundToInt(at * skillValue2 * 0.01f) + Mathf.RoundToInt(maxHp * skillValue3 * 0.01f);
             AttackAction(tg.enemyTarget, vl);
+
+            // 攻撃アニメーション
+            var p = charaImg.transform.position.x + (0.5f * (player == Player.Mine ? 1 : -1));
+            charaImg.transform.DOMoveX(p, 0.05f).SetLoops(2, LoopType.Yoyo);
         };
 
         // 攻撃セット
-        ChangeAction(skillData.Name, (SelectMode)skillData.SelectId, ac);
+        ChangeAction(skillData, ac);
     }
 
     // ---------------------
@@ -476,10 +501,14 @@ public class AttackerCharacter : CharacterScript
             // 攻撃
             int vl = Mathf.RoundToInt(at * skillValue2 * 0.01f) + Mathf.RoundToInt(maxHp * skillValue3 * 0.01f);
             AttackAction(tg.target, vl);
+
+            // 攻撃アニメーション
+            var p = charaImg.transform.position.x + (0.5f * (player == Player.Mine ? 1 : -1));
+            charaImg.transform.DOMoveX(p, 0.05f).SetLoops(2, LoopType.Yoyo);
         };
 
         // 攻撃セット
-        ChangeAction(skillData.Name, (SelectMode)skillData.SelectId, ac);
+        ChangeAction(skillData, ac);
     }
 
     // ---------------------

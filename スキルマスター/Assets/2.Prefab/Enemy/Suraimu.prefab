@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 2
   charaName: "\u30B9\u30E9\u30A4\u30E0"
-  hp: 25000
+  hp: 7000
   attack: 1700
   magicAttack: 1500
   targetPanel: {fileID: 3145699177780535946}
@@ -86,7 +86,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 889414340827171502, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022836757430793276, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8024633062258703677}
+    - target: {fileID: 1022836757430793276, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StatusOpen
       objectReference: {fileID: 0}
     - target: {fileID: 1520703933398000269, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -52,7 +52,6 @@ MonoBehaviour:
   magicAttack: 500
   targetPanel: {fileID: 3145699177780535946}
   notTargetPanel: {fileID: 7803415860756935451}
-  charaImg: {fileID: 158583346035609884}
   hpBar: {fileID: 5101350875280046537}
   activeImg: {fileID: 4720132517004674804}
   targetCursoll: {fileID: 6429680425955959070}
@@ -65,6 +64,7 @@ MonoBehaviour:
   addHP: 0
   addAttack: 0
   addMagicAttack: 0
+  defultAttackMultiplier: 100
   dealtDamageMultiplier: 1
   takeDamageMultiplier: 1
   damage: 0
@@ -75,6 +75,7 @@ MonoBehaviour:
   dedFlag: 0
   activeFlag: 0
   activePlayer: 0
+  skillTurns: 
 --- !u!1001 &1664322503457639090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,7 +86,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 889414340827171502, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1520703933398000269, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -172,17 +173,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
---- !u!114 &158583346035609884 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1525518272285825966, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
-  m_PrefabInstance: {fileID: 1664322503457639090}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3145699177780535946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4377244592778569784, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}

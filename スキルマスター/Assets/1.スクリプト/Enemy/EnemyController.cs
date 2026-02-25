@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CommonData;
 using InGameData;
 using UnityEngine;
 
@@ -9,13 +10,11 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Vector3[] enemyPos;
     [SerializeField] EnemyScript[] enemyPrefabs;
     [SerializeField] Transform enemyParent;
-    [System.Serializable]
-    class EnemyID { public List<int> id = new List<int>(); }
-    [SerializeField] List<EnemyID> stage;
     [SerializeField] CharacterSprite charaSprite;
 
     int turnCount;
     int round;
+    List<Round> rounds;
     List<EnemyScript> enemys;
 
     // Enemy Action Data CPU ------------------------
@@ -33,6 +32,9 @@ public class EnemyController : MonoBehaviour
     public List<EnemyScript> Init()
     {
         enemys = new List<EnemyScript>();
+
+        rounds = GameManager.Instance.GetStageData().rounds;
+
         return enemys;
     }
 
@@ -42,11 +44,23 @@ public class EnemyController : MonoBehaviour
     public void StartRound(out int _nowRound, out int _maxRound)
     {
         int underIndex = 0;
-        int[] layerIndex = new int[stage[round].id.Count];
+        int[] layerIndex = new int[rounds[round].enemysID.Count];
         // エネミー生成
-        for (int i = 0; i < stage[round].id.Count; i++)
+        for (int i = 0; i < rounds[round].enemysID.Count; i++)
         {
-            EnemyScript enemy = Instantiate(enemyPrefabs[stage[round].id[i]], enemyParent);
+            // プレハブ検索
+            int id = rounds[round].enemysID[i];
+            int index = 0;
+            for(int num = 0; num < enemyPrefabs.Length; num++)
+            {
+                if (id != enemyPrefabs[num].charID) continue;
+                
+                index = num;
+                break;
+            }
+
+            // エネミー生成
+            EnemyScript enemy = Instantiate(enemyPrefabs[index], enemyParent);
             enemy.transform.localPosition = enemyPos[i];
             layerIndex[i] = (int)enemyPos[i].y / -80;
             if (underIndex > layerIndex[i]) underIndex = layerIndex[i];
@@ -59,7 +73,7 @@ public class EnemyController : MonoBehaviour
         turnCount = 0;
         round++;
         _nowRound = round;
-        _maxRound = stage.Count;
+        _maxRound = rounds.Count;
     }
 
     public void StartTurn()
@@ -135,7 +149,7 @@ public class EnemyController : MonoBehaviour
         }
 
         // 次のラウンドへ
-        if(flag && round < stage.Count)
+        if(flag && round < rounds.Count)
         {
             director.NextRound();
             flag = false;

@@ -25,10 +25,13 @@ public class CardManager : MonoBehaviour
     EquipmentScript equipment;
     ItemScript item;
 
-    public bool skillPhase;
     public int useCardNum;
+    bool skillPhase;
     int dekkiIdx;
     bool handActiveFlag;
+    Vector3 topPos;
+    Vector3 defultPos;
+    Vector3 underPos;
     //-----------------------------------------------------------
     public List<Action<CardData>> useCardTimingAction; // カード使用時に行う処理
     //-----------------------------------------------------------
@@ -69,10 +72,15 @@ public class CardManager : MonoBehaviour
             { "W", WeponAction },       // 武器カード
             { "E", EquipmentAction },   // 装備カード
             { "I", ItemAction },        // アイテムカード
-            { "N", NormalAction }         // アイテムカード
+            { "N", NormalAction }       // 通常カード
         };
         useCardNum = -1;
         handActiveFlag = true;
+
+        // 手札のそれぞれの状態の時のポジション
+        topPos = CardPearent.transform.position;
+        defultPos = CardPearent.transform.position + (Vector3.down * 120);
+        underPos = CardPearent.transform.position + (Vector3.down * 240);
     }
 
     public void SetCharacter(CharacterScript[] _characters) { characters = _characters; }
@@ -99,11 +107,16 @@ public class CardManager : MonoBehaviour
         }
         SetPosCard(_cards);
 
+        int cnt = 0;
         foreach (var _card in _cards)
         {
             Vector3 pos = _card.transform.localPosition;
             _card.transform.position -= Vector3.up * 400;
-            _card.transform.DOLocalMove(pos, 0.3f);
+            DOVirtual.DelayedCall(cnt * 0.1f, () => {
+                _card.transform.DOLocalMove(pos, 0.3f);
+                AudioManager.Instance.DrawSE();
+            });
+            cnt++;
         }
     }
     string CharacterSkillID(string id)
@@ -125,7 +138,7 @@ public class CardManager : MonoBehaviour
         return $"C{charID}{typeID + 1}{skillID}";
     }
 
-    // ポジションセット
+    // ポジションセット --- アニメーション除外カードは目的地に直接セットする
     void SetPosCard(List<CardScript> notAnimCards = null)
     {
         if (cardList == null || cardList.Count == 0) return;
@@ -137,14 +150,13 @@ public class CardManager : MonoBehaviour
         for (int i = 0; i < cardList.Count; i++)
         {
             cardList[i].SetIndex(i); // 表示の順番を設定
-            //cardList[i].transform.localPosition = Vector3.zero;
 
             // 対象外カードが存在しないなら
             if(notAnimCards == null)
             {
                 cardList[i].transform.localPosition = new Vector3(cardList[i].transform.localPosition.x, 0, 0);
                 if(cardList.Count <= 1) cardList[i].transform.DOLocalMoveX(0, 0.1f); // 0で割らないため
-                else cardList[i].transform.DOLocalMoveX(width * i / (cardList.Count - 1) - harfWidth, 0.1f);
+                else cardList[i].transform.DOLocalMoveX(width * i / (cardList.Count - 1) - harfWidth, 0.1f); // 目的地に向かう
                 continue;
             }
 
@@ -156,9 +168,9 @@ public class CardManager : MonoBehaviour
 
             if (cardList.Count <= 1) cardList[i].transform.DOLocalMoveX(0, 0.1f); // 0で割らないため
             // アニメーション
-            if (flg && cardList.Count <= 1) cardList[i].transform.localPosition = new Vector3(0, 0, 0);
-            else if (flg) cardList[i].transform.localPosition = new Vector3(width * i / (cardList.Count - 1) - harfWidth, 0, 0);
-            else cardList[i].transform.DOLocalMoveX(width * i / (cardList.Count - 1) - harfWidth, 0.1f);
+            if (flg && cardList.Count <= 1) cardList[i].transform.localPosition = new Vector3(0, 0, 0); // 目的地に設置
+            else if (flg) cardList[i].transform.localPosition = new Vector3(width * i / (cardList.Count - 1) - harfWidth, 0, 0); // 目的地に設置
+            else cardList[i].transform.DOLocalMoveX(width * i / (cardList.Count - 1) - harfWidth, 0.1f); // 目的地に向かう
         }
     }
 
@@ -169,8 +181,7 @@ public class CardManager : MonoBehaviour
         if(!playerController.CheckTurn() || !skillPhase || handActiveFlag) return;
 
         CardPearent.transform.DOScale(Vector3.one, 0.08f);
-        Vector3 endPos = CardPearent.transform.position + (Vector3.up * 120);
-        CardPearent.transform.DOMove(endPos, 0.08f);
+        CardPearent.transform.DOMove(topPos, 0.08f);
         handActivePanel.SetActive(false);
 
         handActiveFlag = true;
@@ -183,11 +194,22 @@ public class CardManager : MonoBehaviour
         if (!handActiveFlag) return;
 
         CardPearent.transform.DOScale(Vector3.one * dowmScale, 0.08f);
-        Vector3 endPos = CardPearent.transform.position + (Vector3.down * 120);
-        CardPearent.transform.DOMove(endPos, 0.08f);
+        CardPearent.transform.DOMove(defultPos, 0.08f);
         handActivePanel.SetActive(true);
 
         handActiveFlag = false;
+    }
+
+    /// <summary>
+    /// 現在のフェイズがスキルフェイズなのか
+    /// </summary>
+    public void SetSkillPhase(bool _skillPhase)
+    {
+        skillPhase = _skillPhase;
+        useCardNum = -1;
+
+        if (skillPhase) HandActive();
+        else CardPearent.transform.DOMove(underPos, 0.08f);
     }
 
     /// <summary> 使用したカードを削除する </summary>
@@ -264,6 +286,8 @@ public class CardManager : MonoBehaviour
         card.useFlag = true;
         card.transform.position = new Vector3(activeCardAnchor.position.x, card.transform.position.y, 0);
         card.transform.DOMove(activeCardAnchor.position, 0.2f);
+
+        AudioManager.Instance.UseCardSE();
     }
 
     /*** ----------------------------------------- カード種別 ------------------------------------------------ ***/

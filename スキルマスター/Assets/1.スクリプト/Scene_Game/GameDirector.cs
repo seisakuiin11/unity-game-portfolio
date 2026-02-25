@@ -84,6 +84,13 @@ namespace InGameData
         public int turn;
         public Action<CharacterScript> EndAction;
     }
+
+    public class AttackData
+    {
+        public string Name;
+        public SelectMode Select;
+        public Func<string> Text;
+    }
 }
 
 public class GameDirector : MonoBehaviour
@@ -97,7 +104,6 @@ public class GameDirector : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject fadeImg;
-    [SerializeField] SpriteRenderer skillPhaseImg;
     [SerializeField] GameObject turnText_obj;
     [SerializeField] TextMeshProUGUI turnText_text;
     [SerializeField] Color skillPhaseColor;
@@ -123,6 +129,8 @@ public class GameDirector : MonoBehaviour
         characters = new List<CharacterScript>();
         enemys = new List<EnemyScript>();
         turnText_obj.transform.localScale = new Vector3(1,0,1);
+
+        AudioManager.Instance.BattleBGM();
 
         Init();
     }
@@ -181,7 +189,17 @@ public class GameDirector : MonoBehaviour
         gameUI.DontAction(true);
 
         // テキスト表示
-        turnText_text.text = winner == Player.Mine ? "Game Clear !" : "Game Over";
+        if(winner == Player.Mine) {
+            turnText_text.color = skillPhaseColor;
+            turnText_text.text = "Game Clear !";
+
+            // クリアフラグを立てる
+            GameManager.Instance.StageClear();
+        }
+        else {
+            turnText_text.color = attackPhaseColor;
+            turnText_text.text = "Game Over";
+        }
         turnText_obj.transform.DOScaleY(1f, 0.2f);
 
         await Task.Delay(1000);
@@ -194,6 +212,7 @@ public class GameDirector : MonoBehaviour
         // クエスト選択画面へ移動
         GameManager.Instance.LoadScene(GameManager.Scene.Quest);
     }
+    public void ExitGame() { EndGame(Player.Enemy); }
 
     // 次のラウンドへ =====================================================================================================
     public void NextRound()
@@ -219,8 +238,9 @@ public class GameDirector : MonoBehaviour
 
         // フェイズ移行(NONE除外)
         phase = (Player)((int)phase % (int)(Player.Max - 1) + 1);
-        skillPhaseImg.gameObject.SetActive(false);
-        skillPhaseImg.color = new Color(1, 1, 1, 0);
+        gameUI.PhaseChange(phase);
+
+        AudioManager.Instance.ChangePhaseSE();
 
         switch (phase)
         {
@@ -232,9 +252,6 @@ public class GameDirector : MonoBehaviour
                 gameUI.DontAction(false);
 
                 // テキスト表示
-                skillPhaseImg.gameObject.SetActive(true);
-                skillPhaseImg.DOColor(new Color(1, 1, 1, 0.5f), 0.2f);
-                
                 turnText_text.text = "スキルフェーズ";
                 turnText_text.color = skillPhaseColor;
 
@@ -246,6 +263,7 @@ public class GameDirector : MonoBehaviour
                 // テキスト表示
                 turnText_text.text = "アタックフェーズ";
                 turnText_text.color = attackPhaseColor;
+                gameUI.TextMessage(true, "攻撃するキャラクターを選択", 6f);
                 break;
             case Player.Enemy: // 敵のターン ---------------
 
@@ -309,6 +327,9 @@ public class GameDirector : MonoBehaviour
         ReActive();
         state = SELECT;
 
+        targets.characterTarget = characters;
+        targets.enemyTarget = new List<CharacterScript>(enemys);
+
         List<CharacterScript> targetList = new List<CharacterScript>();
         activePlayer = _activePlayer;
         if(activePlayer != null) activePlayer.activePlayer++;
@@ -362,8 +383,6 @@ public class GameDirector : MonoBehaviour
         if (targets.target == null || (selectMode.HasFlag(SelectMode.Single) && targets.target != target))
         {
             targets.target = target;
-            targets.characterTarget = characters;
-            targets.enemyTarget = new List<CharacterScript>(enemys);
 
             // ターゲットカーソル表示
             // 一度非表示

@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using InGameData;
 
 public class GameUIManager : MonoBehaviour
 {
+    [Header("フェイズUI")]
+    [SerializeField] Image phaseUI;
+    [SerializeField] TextMeshProUGUI phase_Text;
+    [SerializeField] Sprite[] phaseImages;
     [Header("キャラアイコン")]
     [SerializeField] Image[] charaIcons;
     [SerializeField] Image[] enemyIcons;
@@ -14,6 +19,7 @@ public class GameUIManager : MonoBehaviour
     [Header("テキストメッセージ")]
     [SerializeField] GameObject message;
     [SerializeField] TextMeshProUGUI messageText;
+    [SerializeField] TextMeshProUGUI NetxBtnText;
 
     [SerializeField] GameObject DontPanel;
     [SerializeField] GameObject SelectTimingImg;
@@ -85,5 +91,28 @@ public class GameUIManager : MonoBehaviour
         if (time <= 0) return;
 
         DOVirtual.DelayedCall(time, () => { message.SetActive(false); });
+    }
+
+    public void PhaseChange(Player phase)
+    {
+        switch(phase)
+        {
+            case Player.Mine:
+                phaseUI.sprite = phaseImages[0];
+                phase_Text.text = "スキルフェイズ";
+                NetxBtnText.text = "ネクスト\nフェイズ";
+                break;
+            case Player.MyAttackFase:
+                phaseUI.sprite = phaseImages[1];
+                phase_Text.text = "アタックフェイズ";
+                NetxBtnText.text = "ターンエンド";
+                break;
+            case Player.Enemy:
+                phaseUI.sprite = phaseImages[2];
+                phase_Text.text = "エネミーターン";
+                NetxBtnText.text = "エネミー\nターン";
+                break;
+            case Player.EnemyAttackFase: break;
+        }
     }
 }

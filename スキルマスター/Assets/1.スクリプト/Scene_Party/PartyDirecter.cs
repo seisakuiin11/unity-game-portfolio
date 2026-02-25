@@ -93,6 +93,8 @@ public class PartyDirecter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioManager.Instance.DefultBGM();
+
         Init();
     }
 
@@ -140,8 +142,9 @@ public class PartyDirecter : MonoBehaviour
         // ステータスUIを表示していたら
         if(statusUIFlag) { statusUIFlag = false; statusUI.CloseStatusUI(); return; }
 
+        AudioManager.Instance.CancelSE();
         // ロビーへ戻る
-        if(state == State.Main) { GameManager.Instance.LoadScene(GameManager.Scene.Lobby); return; }
+        if (state == State.Main) { GameManager.Instance.LoadScene(GameManager.Scene.Lobby); return; }
 
         ChangeScene(state - 1);
     }
@@ -184,6 +187,8 @@ public class PartyDirecter : MonoBehaviour
     /* --- パーティー編集 --- */
     public void EditStart()
     {
+        AudioManager.Instance.EnterSE();
+
         // シーン遷移
         ChangeScene(State.Member);
 
@@ -258,6 +263,7 @@ public class PartyDirecter : MonoBehaviour
     /* --- メンバー決定 --- */
     public void SaveMember()
     {
+        AudioManager.Instance.EnterSE();
         // シーン遷移
         ChangeScene(State.Card);
 
@@ -273,6 +279,10 @@ public class PartyDirecter : MonoBehaviour
         }
 
         // デッキ生成 ----------------------------------
+        // 枚数初期化
+        foreach (var card in cardList) card.Value.CountUp(-card.Value.GetCount());
+        foreach (var card in dekkiList) card.Value.CountUp(-card.Value.GetCount());
+
         dekkiCount = 0;
         foreach (var id in data.dekki)
         {
@@ -395,7 +405,8 @@ public class PartyDirecter : MonoBehaviour
     {
         // デッキ枚数が40枚未満なら
         if (dekkiCount < 40) return;
-
+        
+        AudioManager.Instance.EnterSE();
         // セーブ
         FindAnyObjectByType<DataBaseManager>().Save(data, $"save{index}");
         saveDatas[index] = data;

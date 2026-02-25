@@ -22,6 +22,7 @@ public class CharacterScript : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] Slider hpBar;
+    [SerializeField] GameObject attackIcon;
     [SerializeField] GameObject activeImg;
     [SerializeField] GameObject targetCursoll;
     [SerializeField] ActionValueText valueText;
@@ -68,25 +69,26 @@ public class CharacterScript : MonoBehaviour
     /// <summary> 基礎魔法攻撃力 </summary>
     public int defultMagicAttack { get { return magicAttack; } }
     /// <summary> 攻撃内容がどうなってるか </summary>
-    public string SkillName { get { return skillName; } }
+    public AttackData SkillData { get { return attackData; } }
     // -----------------------------------------------------------------------
 
     [HideInInspector] public int maxType;           // 潜在覚醒の最大総数
     [HideInInspector] public bool selectFlag;       // 相手から選択できる状態
     [HideInInspector] public bool dedFlag;          // 死亡
     [HideInInspector] public bool activeFlag;       // アクションを起こしているか
-    [HideInInspector] public int activePlayer;     // 現在行動しようとしている
+    [HideInInspector] public int activePlayer;      // 現在行動しようとしている
     protected int typeID;                           // 潜在覚醒のタイプ
     protected Func<Targets, Task>[,] action;        // スキル アクション
     protected Action[] arousalEffect;               // 潜在覚醒時の効果
-    protected SelectMode[,] actionOfSelectType;     // ターゲット対象
     protected int skillID;                          // スキルID
     protected CardData skillData;                   // スキルのデータ
     protected EquipItem equipItem;                  // 装備アイテム
 
-    string skillName;                        // 攻撃の名前
-    SelectMode selectMode;                   // 攻撃ターゲット
-    List<Func<Targets, Task>> attackAction;  // 攻撃内容
+    // 攻撃内容 --------------------------------------------------------------
+    AttackData attackData;
+    List<Func<Targets, Task>> attackAction;      // 攻撃内容
+    protected AttackData[,] defultAttackDatas;   // ターゲット対象
+    // -----------------------------------------------------------------------
 
     protected PlayerController playerController;
     protected EnemyController enemyController;
@@ -133,7 +135,7 @@ public class CharacterScript : MonoBehaviour
         SetSkillStanby();
         // 攻撃内容の初期化
         attackAction = new List<Func<Targets, Task>>() { action[typeID, 0] };
-        selectMode = actionOfSelectType[typeID, 0];
+        attackData = defultAttackDatas[typeID, 0];
 
         // ステータス セット
         if (_data != null)
@@ -275,8 +277,10 @@ public class CharacterScript : MonoBehaviour
         if (player == Player.Mine)
         {
             attackAction = new List<Func<Targets, Task>>() { action[typeID, 0] };
-            selectMode = actionOfSelectType[typeID, 0];
+            attackData = defultAttackDatas[typeID, 0];
         }
+
+        attackIcon.SetActive(player == Player.MyAttackFase);
     }
 
     /// <summary>
@@ -295,7 +299,7 @@ public class CharacterScript : MonoBehaviour
         charaImg.SetSprite(charaSprites[typeID]);
         arousalEffect[typeID]();
 
-        if(skillName == null || skillName == "通常攻撃") ChangeAction("通常攻撃", actionOfSelectType[typeID,0], action[typeID, 0]);
+        if(attackData.Name == null || attackData.Name == "通常攻撃") ChangeAction(defultAttackDatas[typeID,0], action[typeID, 0]);
     }
 
     /// <summary> 現在の潜在覚醒のタイプIDを返す </summary>
@@ -356,7 +360,7 @@ public class CharacterScript : MonoBehaviour
     {
         if (dedFlag) return false;
 
-        if(flag == 0) { // 通常状態
+        if (flag == 0) { // 通常状態
             targetPanel.SetActive(false);
             notTargetPanel.SetActive(false);
             activeImg.SetActive(false);
@@ -368,17 +372,18 @@ public class CharacterScript : MonoBehaviour
             charaImg.SetColor(Color.white);
             // もう行動できないなら
             if(activePlayer == 2) charaImg.SetColor(new Color(0.6f, 0.6f, 0.6f, 1f));
+            else if(player == Player.MyAttackFase) attackIcon.SetActive(true); // まだ行動できて、攻撃フェイズなら
 
             return false;
         }
 
+        if(attackIcon != null) attackIcon.SetActive(false);
         bool isSelect = true;
         if (flag < 0 || (_player != player && !selectFlag)) isSelect = false;
 
         targetPanel.SetActive(isSelect);
         notTargetPanel.SetActive(!isSelect);
         if (!isSelect) charaImg.SetColor(new Color(0.6f, 0.6f, 0.6f, 1f));
-
 
         if (activePlayer == 1) // 行動するキャラクターなら
         {
@@ -400,10 +405,10 @@ public class CharacterScript : MonoBehaviour
         bool flag = false;
         if(_flag > 0) flag = true;
 
-        targetCursoll.SetActive(flag);
-
         if (_flag > 1) targetCursoll.transform.localScale = Vector3.one * 0.7f;
         else targetCursoll.transform.localScale = Vector3.one;
+
+        targetCursoll.SetActive(flag);
     }
 
     // ターゲットを取得して、スキルIDをもとにアクションを行う
@@ -416,9 +421,10 @@ public class CharacterScript : MonoBehaviour
             return;
         }
 
+        // 攻撃フェイズ --------------------------------------------
+        if(attackIcon != null) attackIcon.SetActive(false);
         activePlayer++;
-        // 攻撃フェイズ
-        if (skillName == "通常攻撃") {
+        if (attackData.Name == "通常攻撃") {
             // 通常攻撃時効果
             foreach (var action in defultAttackTimingAction) action(this);
         }
@@ -443,10 +449,7 @@ public class CharacterScript : MonoBehaviour
             { Attack, AllAttack }, // 覚醒：○○
         };
         // スキルの選択対象
-        actionOfSelectType = new SelectMode[2, 2] {
-            { SelectType.EnemySingle, SelectType.EnemyAll }, // 通常状態
-            { SelectType.EnemySingle, SelectType.EnemyAll }, // 覚醒：○○
-        };
+        defultAttackDatas = new AttackData[2, 2];
     }
 
     // バフ関係 =============================================================================================
@@ -455,13 +458,21 @@ public class CharacterScript : MonoBehaviour
     /// </summary>
     /// <param name="_selectMode"></param>
     /// <param name="_action"></param>
-    public void ChangeAction(string _skillName, SelectMode _selectMode, Func<Targets, Task> _action)
+    public void ChangeAction(AttackData _attackData, Func<Targets, Task> _action)
     {
-        skillName = _skillName;
-        selectMode = _selectMode;
+        attackData = _attackData;
         attackAction[0] = _action;
 
         ef.Buff(AnimPos);
+    }
+    public void ChangeAction(CardData cardData, Func<Targets, Task> _action)
+    {
+        AttackData attack = new AttackData() {
+            Name = cardData.Name,
+            Select = (SelectMode)cardData.SelectId,
+            Text = () => cardData.EffectText
+        };
+        ChangeAction(attack, _action);
     }
     /// <summary>
     /// 攻撃内容を追加する
@@ -532,24 +543,25 @@ public class CharacterScript : MonoBehaviour
     }
 
     // ==========================================================================================================
+    // ステータス確認 - UIクリック時
+    public void StatusOpen()
+    {
+        if (dedFlag) return;
+        // 右クリックなら、キャラクター情報を表示
+        if (!Input.GetMouseButtonUp(1)) return;
+
+        StatusUI.Instance.OpenStatusUI(this);
+    }
+
     // 攻撃アクション - UIクリック時の処理
     public void DefaultAttack()
     {
         if (dedFlag) return;
 
-        // 右クリックなら、キャラクター情報を表示
-        if (Input.GetMouseButtonUp(1))
-        {
-            // キャラクターステータス表示
-            StatusUI.Instance.OpenStatusUI(this);
-
-            return;
-        }
-
-        if (activePlayer != 0) return;
+        if (activePlayer != 0) return; // 行動可能なら
 
         // プレイヤーの攻撃フェイズ
-        if(player == Player.MyAttackFase) playerController.SelectMode(this, selectMode);
+        if(player == Player.MyAttackFase) playerController.SelectMode(this, attackData.Select);
     }
 
     /// <summary>

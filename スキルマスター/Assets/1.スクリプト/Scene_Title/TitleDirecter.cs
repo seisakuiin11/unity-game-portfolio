@@ -15,6 +15,8 @@ public class TitleDirecter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioManager.Instance.DefultBGM();
+
         if (GameManager.Instance.GetScene() == GameManager.Scene.Title) {
             title.SetActive(true);
             lobby.SetActive(false);
@@ -30,7 +32,7 @@ public class TitleDirecter : MonoBehaviour
     void Update()
     {
         // ロビーへ進む
-        if(GameManager.Instance.GetScene() == GameManager.Scene.Title && (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)))
+        if(GameManager.Instance.GetScene() == GameManager.Scene.Title && Input.GetKeyDown(KeyCode.Space))
         {
             NextScene();
         }
@@ -45,8 +47,9 @@ public class TitleDirecter : MonoBehaviour
         }
     }
 
-    async void NextScene() // ロビーへ進む
+    public async void NextScene() // ロビーへ進む
     {
+        AudioManager.Instance.StartSE();
         load.SetActive(true); // 表示
 
         await Task.Delay(100);
@@ -68,6 +71,8 @@ public class TitleDirecter : MonoBehaviour
 
     public void BackScene() // タイトルへ戻る
     {
+        AudioManager.Instance.CancelSE();
+
         GameManager.Instance.LoadScene(GameManager.Scene.Title);
         title.SetActive(true);
         lobby.SetActive(false);
@@ -84,6 +89,8 @@ public class TitleDirecter : MonoBehaviour
 
     public async void QuestBtnClick()
     {
+        AudioManager.Instance.EnterSE();
+
         load.SetActive(true);
         await Task.Delay(100);
 
@@ -92,6 +99,8 @@ public class TitleDirecter : MonoBehaviour
 
     public async void PartyBtnClick()
     {
+        AudioManager.Instance.EnterSE();
+
         load.SetActive(true);
         await Task.Delay(100);
 

@@ -47,12 +47,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 2
   charaName: "\u30DC\u30B9\u30B9\u30E9\u30A4\u30E0"
-  hp: 200000
-  attack: 5000
+  hp: 120000
+  attack: 8000
   magicAttack: 3500
   targetPanel: {fileID: 3145699177780535946}
   notTargetPanel: {fileID: 7803415860756935451}
   hpBar: {fileID: 5101350875280046537}
+  attackIcon: {fileID: 0}
   activeImg: {fileID: 4720132517004674804}
   targetCursoll: {fileID: 6429680425955959070}
   valueText: {fileID: 8249947433150589018, guid: a4a7373fce6adcb4680d1df099eb9fa0, type: 3}
@@ -86,7 +87,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 889414340827171502, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1022836757430793276, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2066107284005951196}
+    - target: {fileID: 1022836757430793276, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StatusOpen
       objectReference: {fileID: 0}
     - target: {fileID: 1520703933398000269, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
       propertyPath: m_AnchoredPosition.y

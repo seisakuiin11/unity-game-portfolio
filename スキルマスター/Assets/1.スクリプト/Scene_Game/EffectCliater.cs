@@ -10,11 +10,13 @@ public class EffectCliater : MonoBehaviour
     public void Slash(Vector3 pos)
     {
         Instantiate(effects[SLASH]).Play(pos);
+        AudioManager.Instance.SlashSE();
     }
     /// <summary> スマッシュ攻撃 </summary>
     public void Smash(Vector3 pos)
     {
         Instantiate(effects[SMASH]).Play(pos);
+        AudioManager.Instance.BlowSE();
     }
     /// <summary> 魔法攻撃 </summary>
     public void Magic(Vector3 pos)
@@ -30,6 +32,7 @@ public class EffectCliater : MonoBehaviour
     public void Buff(Vector3 pos)
     {
         Instantiate(effects[BUFF]).Play(pos);
+        AudioManager.Instance.BafuSE();
     }
     /// <summary> デバフ効果 </summary>
     public void Debuff(Vector3 pos)
@@ -40,10 +43,12 @@ public class EffectCliater : MonoBehaviour
     public void Ice(Vector3 pos)
     {
         Instantiate(effects[ICE]).Play(pos);
+        AudioManager.Instance.IceSE();
     }
     /// <summary> 上級氷魔法攻撃 </summary>
     public void IceEge(Vector3 pos)
     {
         Instantiate(effects[ICE_EGE]).Play(pos);
+        AudioManager.Instance.IceSE();
     }
 }

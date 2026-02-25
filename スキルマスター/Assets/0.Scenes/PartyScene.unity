@@ -1268,6 +1268,7 @@ GameObject:
   - component: {fileID: 360005008}
   - component: {fileID: 360005007}
   - component: {fileID: 360005009}
+  - component: {fileID: 360005010}
   m_Layer: 5
   m_Name: Arrow_Right
   m_TagString: Untagged
@@ -1361,6 +1362,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &360005010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360005005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 360005007}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 360005007}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 0, y: 0, z: 0}
+  changeColor: {r: 0, g: 0, b: 0, a: 0}
+  FadeColor: {r: 0, g: 0, b: 0, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &363063032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2207,6 +2241,7 @@ GameObject:
   - component: {fileID: 566717767}
   - component: {fileID: 566717766}
   - component: {fileID: 566717765}
+  - component: {fileID: 566717770}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -2300,6 +2335,39 @@ RectTransform:
   m_AnchoredPosition: {x: -1200, y: -388.1}
   m_SizeDelta: {x: 280, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &566717770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566717764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 566717767}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 566717767}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 1.2, y: 1.2, z: 1.2}
+  changeColor: {r: 1, g: 1, b: 1, a: 0}
+  FadeColor: {r: 1, g: 1, b: 1, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &567613593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,6 +2960,7 @@ GameObject:
   - component: {fileID: 671627939}
   - component: {fileID: 671627938}
   - component: {fileID: 671627940}
+  - component: {fileID: 671627941}
   m_Layer: 5
   m_Name: BackBtn
   m_TagString: Untagged
@@ -2985,6 +3054,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &671627941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671627936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 671627938}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 671627938}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 0, y: 0, z: 0}
+  changeColor: {r: 0, g: 0, b: 0, a: 0}
+  FadeColor: {r: 0, g: 0, b: 0, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &672836898
 GameObject:
   m_ObjectHideFlags: 0
@@ -6042,7 +6144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1159240634
 Transform:
   m_ObjectHideFlags: 0
@@ -6351,15 +6453,15 @@ RectTransform:
   m_GameObject: {fileID: 1253012243}
   m_LocalRotation: {x: 0, y: 0, z: -0.24835175, w: 0.96866995}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 776112205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -28.76}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 80.21, y: 125.9}
+  m_SizeDelta: {x: 290, y: 435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1253012245
 MonoBehaviour:
@@ -6381,7 +6483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8414540994807176408, guid: c471606ce30856c4aad6a8be1da7ffaf, type: 3}
+  m_Sprite: {fileID: 1754282787323279094, guid: 6b8d4c8540eb4af4aa6e14856954ef69, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6950,7 +7052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1297744999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9537,6 +9639,7 @@ GameObject:
   - component: {fileID: 1670269708}
   - component: {fileID: 1670269707}
   - component: {fileID: 1670269709}
+  - component: {fileID: 1670269710}
   m_Layer: 5
   m_Name: Arrow_Left
   m_TagString: Untagged
@@ -9630,6 +9733,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1670269710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670269705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 1670269707}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 1670269707}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 0, y: 0, z: 0}
+  changeColor: {r: 0, g: 0, b: 0, a: 0}
+  FadeColor: {r: 0, g: 0, b: 0, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &1682045145
 GameObject:
   m_ObjectHideFlags: 0
@@ -9814,6 +9950,7 @@ GameObject:
   - component: {fileID: 1742249171}
   - component: {fileID: 1742249170}
   - component: {fileID: 1742249172}
+  - component: {fileID: 1742249173}
   m_Layer: 5
   m_Name: SaveBtn
   m_TagString: Untagged
@@ -9908,6 +10045,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1742249173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742249168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 1742249170}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 1742249170}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 1.2, y: 1.2, z: 1.2}
+  changeColor: {r: 1, g: 1, b: 1, a: 0}
+  FadeColor: {r: 1, g: 1, b: 1, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &1752617878
 GameObject:
   m_ObjectHideFlags: 0
@@ -11358,6 +11528,7 @@ GameObject:
   - component: {fileID: 1948625573}
   - component: {fileID: 1948625572}
   - component: {fileID: 1948625574}
+  - component: {fileID: 1948625575}
   m_Layer: 5
   m_Name: EditBtn
   m_TagString: Untagged
@@ -11452,6 +11623,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1948625575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948625570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 1948625572}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 1948625572}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 0, y: 0, z: 0}
+  changeColor: {r: 0, g: 0, b: 0, a: 0}
+  FadeColor: {r: 0, g: 0, b: 0, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &1957430008
 GameObject:
   m_ObjectHideFlags: 0
@@ -11574,6 +11778,7 @@ GameObject:
   - component: {fileID: 1982242882}
   - component: {fileID: 1982242881}
   - component: {fileID: 1982242884}
+  - component: {fileID: 1982242885}
   m_Layer: 5
   m_Name: Character1
   m_TagString: Untagged
@@ -11667,6 +11872,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   img: {fileID: 0}
   text: {fileID: 0}
+--- !u!114 &1982242885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982242879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 1982242882}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 1982242882}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 1.2, y: 1.2, z: 1.2}
+  changeColor: {r: 1, g: 1, b: 1, a: 0}
+  FadeColor: {r: 1, g: 1, b: 1, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &1984627064
 GameObject:
   m_ObjectHideFlags: 0
@@ -12193,6 +12431,7 @@ GameObject:
   - component: {fileID: 2071332765}
   - component: {fileID: 2071332764}
   - component: {fileID: 2071332766}
+  - component: {fileID: 2071332767}
   m_Layer: 5
   m_Name: NextBtn
   m_TagString: Untagged
@@ -12287,6 +12526,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &2071332767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071332762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 2071332764}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 2071332764}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 1.2, y: 1.2, z: 1.2}
+  changeColor: {r: 1, g: 1, b: 1, a: 0}
+  FadeColor: {r: 1, g: 1, b: 1, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &2093679686
 GameObject:
   m_ObjectHideFlags: 0
@@ -12758,9 +13030,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1837326807}
     m_Modifications:
+    - target: {fileID: 1644957320726034402, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6029224579081968278, guid: 673a958a461721a4a82d522bfb112974, type: 3}
       propertyPath: m_Name
       value: StatusUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029224579081968278, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229492635425280834, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229492635425280834, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229492635425280834, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229492635425280834, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229492635425280834, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6229492635425280834, guid: 673a958a461721a4a82d522bfb112974, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8394255359972268065, guid: 673a958a461721a4a82d522bfb112974, type: 3}
       propertyPath: m_LocalPosition.x

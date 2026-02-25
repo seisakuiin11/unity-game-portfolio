@@ -352,4 +352,10 @@ namespace CommonData
         public string Text;
         public Sprite img;
     }
+
+    // ステージごとの敵情報
+    [Serializable]
+    public class Round { public List<int> enemysID = new List<int>(); }
+    [Serializable]
+    public class Stage { public bool clearFlag; public List<Round> rounds = new List<Round>(); }
 }

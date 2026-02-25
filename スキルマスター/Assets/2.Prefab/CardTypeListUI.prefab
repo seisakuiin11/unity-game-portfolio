@@ -721,6 +721,7 @@ GameObject:
   - component: {fileID: 8364022888027895420}
   - component: {fileID: 3610910474106279727}
   - component: {fileID: 4607939774759661851}
+  - component: {fileID: 8397175787606778819}
   m_Layer: 5
   m_Name: CloseBtn
   m_TagString: Untagged
@@ -814,6 +815,39 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &8397175787606778819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801797010065469943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6bb326885a390c4d89a88a5d7fbfe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj_start: []
+  obj_enter:
+  - obj: {fileID: 3610910474106279727}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 00000000
+  obj_exit:
+  - obj: {fileID: 3610910474106279727}
+    defultPos: {x: 0, y: 0, z: 0}
+    defultScale: {x: 0, y: 0, z: 0}
+    defultColor: {r: 0, g: 0, b: 0, a: 0}
+    animTypes: 01000000
+  loopAnimTime: 2
+  animTime: 0.2
+  bigScale: {x: 1.1, y: 1.1, z: 1.1}
+  smaleScale: {x: 1, y: 1, z: 1}
+  pulseScale: {x: 1.2, y: 1.2, z: 1.2}
+  changeColor: {r: 1, g: 1, b: 1, a: 0}
+  FadeColor: {r: 1, g: 1, b: 1, a: 0}
+  moveVec: {x: 0, y: 10, z: 0}
 --- !u!1 &7024095596115224530
 GameObject:
   m_ObjectHideFlags: 0

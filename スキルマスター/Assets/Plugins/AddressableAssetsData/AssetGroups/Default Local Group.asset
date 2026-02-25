@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0783eb6ecc730064cb5520b66b9ab3b4
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-1.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 097ed9ca318eb894a910a5d45b14a03d
     m_Address: "Assets/3.\u7D20\u6750/Card/E003.png"
     m_ReadOnly: 0
@@ -75,6 +80,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ae043951b863cd49aeadec2b970c6d6
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_2-2.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2d66d9aed66c541418afc9019d58f6e8
     m_Address: "Assets/3.\u7D20\u6750/Card/C214.png"
     m_ReadOnly: 0
@@ -95,11 +105,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3e1d580eae3d9c140ae4fd9f8d34f051
-    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-1.png"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43f9c42518be2bc42afc3b64049fe7da
     m_Address: "Assets/3.\u7D20\u6750/Card/I003.png"
     m_ReadOnly: 0
@@ -112,6 +117,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 468382a68f48f864a81d47b08c86473d
     m_Address: "Assets/3.\u7D20\u6750/Card/C122.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49d424f14ac356e46a9d9bb7b17e518c
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-2.png"
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -155,11 +165,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6eaea9a8646bd0e4e9274a5f859ab167
-    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_2-1.png"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 70e4e59122133314d8c808b48848bbc0
     m_Address: "Assets/3.\u7D20\u6750/Card/C315.png"
     m_ReadOnly: 0
@@ -200,6 +205,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 913e8ad177a6cfc42a2b96aef8dff7a5
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_1-2.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9166dfed31e7cdf46aad50e96b59e842
     m_Address: "Assets/3.\u7D20\u6750/Card/C123.png"
     m_ReadOnly: 0
@@ -212,11 +222,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 969e949c9bd502548a7a49a10a9ad410
     m_Address: "Assets/3.\u7D20\u6750/Card/W301.png"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9e0de33313f8019408821a82c23f3d3e
-    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_2-2.png"
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -270,11 +275,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: b9295bebb4d3b224084bf2319b19adce
-    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_1-1.png"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ba7833f16cdfbb641a9aea9661e65aa0
     m_Address: "Assets/3.\u7D20\u6750/Card/I004.png"
     m_ReadOnly: 0
@@ -305,6 +305,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c683dbede8ec9a74c950c426ddd32b31
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_1-1.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c69e938c80b9b924aade0f208244af51
     m_Address: "Assets/3.\u7D20\u6750/Card/E004.png"
     m_ReadOnly: 0
@@ -322,11 +327,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dab5887bf66c123458e83559a697fc6a
     m_Address: "Assets/3.\u7D20\u6750/Character/\u30A2\u30EA\u30CA_\u30A2\u30A4\u30B9\u30AF\u30A4\u30FC\u30F3.png"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: db347fc34dad51a4e8aac1b5def23254
-    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_1-2.png"
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -385,11 +385,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ef7d8302713438848809791e809da779
-    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-2.png"
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f3510d3e05b3fa44890c6b63102f8504
     m_Address: "Assets/3.\u7D20\u6750/Card/C225.png"
     m_ReadOnly: 0
@@ -412,6 +407,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb1182566548de04fa1b5062efb4e32d
     m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_3-3.png"
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdfff16c33db1e343a61cb8cd51e0e5a
+    m_Address: "Assets/3.\u7D20\u6750/ArousalCard/Arousal_2-1.png"
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

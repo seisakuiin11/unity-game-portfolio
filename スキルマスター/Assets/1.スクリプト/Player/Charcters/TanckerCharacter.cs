@@ -24,9 +24,9 @@ public class TanckerCharacter : CharacterScript
             { Attack, Skill_11,Skill_22, Skill_23, Skill_24, Skill_25 }, // 覚醒：キャッスル
         };
         // 通常攻撃の選択対象
-        actionOfSelectType = new SelectMode[2, 1] {
-            { SelectType.EnemySingle }, // 通常状態
-            { SelectType.EnemySingle }, // 覚醒：キャッスル
+        defultAttackDatas = new AttackData[2, 1] {
+            { SetDefultAttack01() }, // 通常状態
+            { SetDefultAttack01() }, // 覚醒：キャッスル
         };
     }
 
@@ -73,6 +73,15 @@ public class TanckerCharacter : CharacterScript
     // ---------------------
     // 通常攻撃
     // ---------------------
+    AttackData SetDefultAttack01()
+    {
+        return new AttackData()
+        {
+            Name = "通常攻撃",
+            Select = SelectMode.Single | SelectMode.Enemy,
+            Text = () => $"敵一体に攻撃力{defultAttackMultiplier}％のダメージを与える"
+        };
+    }
     async Task Attack(Targets target) // ID: 0
     {
         // ダメージアニメーション

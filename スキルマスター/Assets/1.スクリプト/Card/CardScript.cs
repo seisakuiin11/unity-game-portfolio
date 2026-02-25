@@ -4,6 +4,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using TMPro;
 using CommonData;
+using DG.Tweening;
 
 public class CardScript : MonoBehaviour
 {
@@ -22,7 +23,6 @@ public class CardScript : MonoBehaviour
 
     public bool useFlag;
     public CardData data;
-
 
     void Awake()
     {
@@ -78,14 +78,14 @@ public class CardScript : MonoBehaviour
     {
         if (useFlag) return;
 
-        this.transform.localPosition += Vector3.up * 30;
+        this.transform.DOLocalMoveY(30, 0.1f);
         this.transform.SetAsLastSibling();
     }
     public void OutCardMouseOver()
     {
         if (useFlag) return;
 
-        this.transform.localPosition += Vector3.down * 30;
+        this.transform.DOLocalMoveY(0, 0.1f);
         this.transform.SetSiblingIndex(index);
 
         activeFlag = false;

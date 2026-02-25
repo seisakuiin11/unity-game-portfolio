@@ -24,9 +24,9 @@ public class MagicerCharacter : CharacterScript
             { Attack, Skill_21,Skill_22, Skill_23, Skill_14, Skill_15 }, // 覚醒：○○
         };
         // 通常攻撃の選択対象
-        actionOfSelectType = new SelectMode[2, 1] {
-            { SelectType.EnemySingle }, // 通常状態
-            { SelectType.EnemySingle }, // 覚醒：○○
+        defultAttackDatas = new AttackData[2, 1] {
+            { SetDefultAttack01() }, // 通常状態
+            { SetDefultAttack01() }, // 覚醒：アイスクイーン
         };
     }
 
@@ -73,6 +73,15 @@ public class MagicerCharacter : CharacterScript
     // ---------------------
     // 通常攻撃
     // ---------------------
+    AttackData SetDefultAttack01()
+    {
+        return new AttackData()
+        {
+            Name = "通常攻撃",
+            Select = SelectMode.Single | SelectMode.Enemy,
+            Text = () => $"敵一体に魔法攻撃力{defultAttackMultiplier}％のダメージを与える"
+        };
+    }
     async Task Attack(Targets target) // ID: 0
     {
         // エフェクト
@@ -157,7 +166,7 @@ public class MagicerCharacter : CharacterScript
         };
 
         // 攻撃セット
-        ChangeAction(skillData.Name, (SelectMode)skillData.SelectId, ac);
+        ChangeAction(skillData, ac);
     }
 
     // ---------------------
@@ -179,7 +188,7 @@ public class MagicerCharacter : CharacterScript
         };
 
         // 攻撃セット
-        ChangeAction(skillData.Name, (SelectMode)skillData.SelectId, ac);
+        ChangeAction(skillData, ac);
     }
 
     // ---------------------
@@ -201,7 +210,7 @@ public class MagicerCharacter : CharacterScript
         };
 
         // 攻撃セット
-        ChangeAction(skillData.Name, (SelectMode)skillData.SelectId, ac);
+        ChangeAction(skillData, ac);
     }
 
     /*** -------------------- モード.アイスクイーン ID: 1 ----------------------- ***/
@@ -349,7 +358,7 @@ public class MagicerCharacter : CharacterScript
         };
 
         // 攻撃セット
-        ChangeAction(skillData.Name, (SelectMode)skillData.SelectId, ac);
+        ChangeAction(skillData, ac);
     }
 
     // ---------------------

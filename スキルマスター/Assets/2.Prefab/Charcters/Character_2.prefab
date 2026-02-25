@@ -53,6 +53,7 @@ MonoBehaviour:
   targetPanel: {fileID: 8220552699966515631}
   notTargetPanel: {fileID: 3889365142628595774}
   hpBar: {fileID: 2267881321563484908}
+  attackIcon: {fileID: 9085292450388349780}
   activeImg: {fileID: 1743955287371189713}
   targetCursoll: {fileID: 38370568065133115}
   valueText: {fileID: 8249947433150589018, guid: a4a7373fce6adcb4680d1df099eb9fa0, type: 3}
@@ -92,6 +93,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 303888835246098330}
     - target: {fileID: 1022836757430793276, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StatusOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1356258063026778677, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 303888835246098330}
+    - target: {fileID: 1356258063026778677, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DefaultAttack
       objectReference: {fileID: 0}
@@ -202,5 +211,10 @@ GameObject:
 --- !u!1 &8220552699966515631 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4377244592778569784, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
+  m_PrefabInstance: {fileID: 5668446313313796503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9085292450388349780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3512575414509671107, guid: 74aa7a723187dc94cae4dc93eeddfbae, type: 3}
   m_PrefabInstance: {fileID: 5668446313313796503}
   m_PrefabAsset: {fileID: 0}

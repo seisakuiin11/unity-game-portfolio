@@ -13,13 +13,22 @@ public class Suraimu : EnemyScript
             { Attack }, // 通常状態
         };
         // スキルの選択対象
-        actionOfSelectType = new SelectMode[1, 1] {
-            { SelectType.AllySingle }, // 通常状態
+        defultAttackDatas = new AttackData[1, 1] {
+            { SetDefultAttack01() }, // 通常状態
         };
     }
 
     /*** -------------------- 通常状態(テスト) ID: 0 ----------------------- ***/
-
+    const int Skill01_Value = 100;
+    AttackData SetDefultAttack01()
+    {
+        return new AttackData()
+        {
+            Name = "タックル",
+            Select = SelectType.AllySingle,
+            Text = () => $"敵一体に攻撃力{Skill01_Value}％のダメージを与える"
+        };
+    }
     async Task Attack(Targets target) // ID: 0
     {
         waitTime = 100;

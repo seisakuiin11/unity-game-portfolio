@@ -20,9 +20,12 @@ public class QuestDirecter : MonoBehaviour
     [Header("クエスト選択画面")]
     [SerializeField] GameObject questUI;
     [SerializeField] GameObject[] questBtns_Capsule;
+    [SerializeField] Image[] enemyImgs;
+    [SerializeField] Sprite[] enemySprites;
 
     [Header("パーティ選択画面")]
     [SerializeField] GameObject partyUI;
+    [SerializeField] TextMeshProUGUI partyName;
     [SerializeField] Image[] charaImg;
     [SerializeField] TextMeshProUGUI[] charaText;
 
@@ -41,6 +44,8 @@ public class QuestDirecter : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        AudioManager.Instance.DefultBGM();
+
         Init();
     }
 
@@ -77,8 +82,17 @@ public class QuestDirecter : MonoBehaviour
         scene[state].SetActive(true);
 
         // 挑戦可能クエストのアクティブ化
-        questsFlag = new bool[5] { true, false, false, false, false };
-        questBtns_Capsule[0].SetActive(false); // (仮プログラム)
+        questsFlag = GameManager.Instance.GetStageClearFlags();
+        bool clearFlag = false;
+        for(int i = 0; i < questsFlag.Length; i++)
+        {
+            // クエスト張り紙を生成 (仮プログラム)
+            questBtns_Capsule[i].SetActive(clearFlag);
+            bool flag = !clearFlag;
+            clearFlag = !questsFlag[i];
+            if (questsFlag[i]) { enemyImgs[i].sprite = enemySprites[i]; enemyImgs[i].SetNativeSize(); }
+            questsFlag[i] = flag;
+        }
 
         statusUI.Init();
         cardListUI.Init(40); // デッキの最大枚数
@@ -89,8 +103,10 @@ public class QuestDirecter : MonoBehaviour
     {
         // ステータスUIを表示していたら
         if (statusUIFlag) { statusUIFlag = false; statusUI.CloseStatusUI(); return; }
+
+        AudioManager.Instance.CancelSE();
         // 最初の画面なら
-        if(state == 0) { GameManager.Instance.LoadScene(GameManager.Scene.Lobby); return; }
+        if (state == 0) { GameManager.Instance.LoadScene(GameManager.Scene.Lobby); return; }
 
         // 前のシーンに戻る
         ChangeScene(state - 1);
@@ -118,6 +134,8 @@ public class QuestDirecter : MonoBehaviour
     {
         if (!questsFlag[_index]) return;
 
+        AudioManager.Instance.EnterSE();
+
         // ステージ番号
         GameManager.Instance.stageIndex = _index;
 
@@ -143,6 +161,7 @@ public class QuestDirecter : MonoBehaviour
         saveIndex = (saveIndex + index) % saveDatas.Count;
         if (saveIndex < 0) saveIndex = saveDatas.Count - 1;
 
+        partyName.text = "パーティー." + (saveIndex + 1);
         // 画像,テキスト 代入
         SaveData data = saveDatas[saveIndex];
         for (int i = 0; i < data.charaID.Length; i++)
@@ -156,6 +175,8 @@ public class QuestDirecter : MonoBehaviour
 
     public async void GameStart()
     {
+        AudioManager.Instance.EnterSE();
+
         loadUI.SetActive(true);
         // 何番目のセーブデータを使用するか
         GameManager.Instance.saveDataIndex = saveIndex;

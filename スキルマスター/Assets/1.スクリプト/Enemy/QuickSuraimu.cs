@@ -2,6 +2,7 @@ using DG.Tweening;
 using InGameData;
 using System;
 using System.Threading.Tasks;
+using UnityEngine;
 
 public class QuickSuraimu : EnemyScript
 {
@@ -9,23 +10,32 @@ public class QuickSuraimu : EnemyScript
     protected override void SetSkillStanby()
     {
         // スキル 処理
-        action = new Func<Targets, Task>[1, 2] {
-            { Attack, RandomAttack }, // 通常状態
+        action = new Func<Targets, Task>[1, 1] {
+            { RandomAttack }, // 通常状態
         };
         // スキルの選択対象
-        actionOfSelectType = new SelectMode[1, 2] {
-            { SelectType.AllySingle, SelectType.AllyAll }, // 通常状態
+        defultAttackDatas = new AttackData[1, 1] {
+            { SetDefultAttack02() }, // 通常状態
         };
     }
 
     /*** -------------------- 通常状態(テスト) ID: 0 ----------------------- ***/
-
+    const int Skill01_Value = 100;
+    AttackData SetDefultAttack01()
+    {
+        return new AttackData()
+        {
+            Name = "タックル",
+            Select = SelectType.AllySingle,
+            Text = () => $"敵一体に攻撃力{Skill01_Value}％のダメージを与える"
+        };
+    }
     async Task Attack(Targets target) // ID: 0
     {
         waitTime = 100;
         await Task.Delay(100);
 
-        AttackAction(target.target, at);
+        AttackAction(target.target, Mathf.RoundToInt(at * Skill01_Value * 0.01f));
 
         // ダメージアニメーション
         var p = charaImg.transform.position.x + (0.5f * (player == Player.Mine ? 1 : -1));
@@ -33,13 +43,24 @@ public class QuickSuraimu : EnemyScript
         ef.Smash(target.target.AnimPos);
     }
 
+    const int Skill02_Count = 3;
+    const int Skill02_Value = 80;
+    AttackData SetDefultAttack02()
+    {
+        return new AttackData()
+        {
+            Name = "連続タックル",
+            Select = SelectType.AllyAll,
+            Text = () => $"{Skill02_Count}回ランダムな敵に攻撃力{Skill02_Value}％のダメージを与える"
+        };
+    }
     async Task RandomAttack(Targets target) // ID: 0
     {
         waitTime = 700;
         await Task.Delay(100);
 
         // ランダムに3回攻撃する
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < Skill02_Count; i++)
         {
             await Task.Delay(200);
 
@@ -47,10 +68,10 @@ public class QuickSuraimu : EnemyScript
             if (target.canSelectTarget.Count == 0) break;
 
             int num = UnityEngine.Random.Range(0, target.canSelectTarget.Count);
-            AttackAction(target.canSelectTarget[num], at * 0.8f, MP.Damage / 2);
+            AttackAction(target.canSelectTarget[num], Mathf.RoundToInt(at * Skill02_Value * 0.01f), MP.Damage / 2);
 
             // エフェクト
-            ef.Slash(target.canSelectTarget[num].AnimPos);
+            ef.Smash(target.canSelectTarget[num].AnimPos);
 
             // 対象が死んだら、選択対象リストから消す
             if (target.canSelectTarget[num].dedFlag) target.canSelectTarget.RemoveAt(num);
