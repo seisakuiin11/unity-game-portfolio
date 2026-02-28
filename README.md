@@ -10,20 +10,19 @@ Unityで制作したカードゲームです。
 ## 使用技術
 - Unity 6000.0.43f1
 - C#
-- Google / DOTween
-- GitHub / GitHub Desktop
-
-## このプロジェクトで工夫した点
+- Google / DOTween / Addressables
 
 ## 見てほしいコード
 - CharacterScript.cs
   `Assets/1.スクリプト/CharacterScript.cs`
+- DataBaseManager.cs
+  `Assets/1.スクリプト/DataBaseManager.cs`
 
 ## 動作デモ
 現在制作中
 
 ## 制作期間
-現在制作中
+3ヶ月
 
 ## 制作体制
 個人制作
