@@ -19,7 +19,7 @@ Unityで制作したカードゲームです。
   `Assets/1.スクリプト/DataBaseManager.cs`
 
 ## 動作デモ
-現在制作中
+https://youtu.be/WZMck0xcrZQ?si=aIrztMlGmc9jQEkZ
 
 ## 制作期間
 3ヶ月
