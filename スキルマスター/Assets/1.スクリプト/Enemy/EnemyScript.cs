@@ -5,22 +5,13 @@ using UnityEngine;
 
 public class EnemyScript : CharacterScript
 {
+    const int DELAY_DEAD_EFFECT = 200;
+
     [Header("ターン経過スキル発動(小さい順)"), SerializeField]
     int[] skillTurns;
 
     protected int waitTime;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public async virtual Task DoThink(int turnCount)
     {
@@ -45,7 +36,7 @@ public class EnemyScript : CharacterScript
     /// <summary> 死亡エフェクト(Destroy込) </summary>
     public async void DeadEffect()
     {
-        await Task.Delay(200);
+        await Task.Delay(DELAY_DEAD_EFFECT);
         Destroy(charaImg.gameObject);
         Destroy(gameObject);
     }

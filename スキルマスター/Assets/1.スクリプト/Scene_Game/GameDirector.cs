@@ -95,6 +95,8 @@ namespace InGameData
 
 public class GameDirector : MonoBehaviour
 {
+    const int DELAY_JUDGE = 500, DELAY_FADEOUT = 1000, DELAY_LOADSCENE = 1200;
+
     const sbyte PLAYER = 1, ENEMY = -1;
     const sbyte DEFULT = 0, SELECT = 1, ACTION = 2;
 
@@ -183,7 +185,7 @@ public class GameDirector : MonoBehaviour
     }
 
     // ゲーム終了を宣言する ----------------------------------------------------------------------------------------------
-    async void EndGame(Player winner)
+    async Task EndGame(Player winner)
     {
         endGame = true;
         gameUI.DontAction(true);
@@ -202,12 +204,12 @@ public class GameDirector : MonoBehaviour
         }
         turnText_obj.transform.DOScaleY(1f, 0.2f);
 
-        await Task.Delay(1000);
+        await Task.Delay(DELAY_FADEOUT);
 
         fadeImg.SetActive(true);
         fadeImg.transform.DOMoveX(960f, 1f);
 
-        await Task.Delay(1200);
+        await Task.Delay(DELAY_LOADSCENE);
 
         // クエスト選択画面へ移動
         GameManager.Instance.LoadScene(GameManager.Scene.Quest);
@@ -412,7 +414,7 @@ public class GameDirector : MonoBehaviour
         ReActive();
     }
 
-    async void PlayerAction(Targets targets)
+    async Task PlayerAction(Targets targets)
     {
         if (activePlayer == null) return;
 
@@ -420,7 +422,7 @@ public class GameDirector : MonoBehaviour
         await activePlayer.Action(targets);
         activePlayer = null;
 
-        await Task.Delay(500);
+        await Task.Delay(DELAY_JUDGE);
 
         // 勝利判定
         if (enemyController.CheckGameClear()) EndGame(Player.Mine);

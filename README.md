@@ -13,10 +13,12 @@ Unityで制作したカードゲームです。<br>
 - Google / DOTween / Addressables
 
 ## 見てほしいコード
-- CharacterScript.cs
-  `Assets/1.スクリプト/CharacterScript.cs`
 - DataBaseManager.cs
   `Assets/1.スクリプト/DataBaseManager.cs`
+- GameDirector.cs
+  `Assets/1.スクリプト/Scene_Game/GameDirector.cs`
+- CharacterScript.cs
+  `Assets/1.スクリプト/CharacterScript.cs`
 
 ## 動作デモ
 https://youtu.be/WZMck0xcrZQ?si=aIrztMlGmc9jQEkZ

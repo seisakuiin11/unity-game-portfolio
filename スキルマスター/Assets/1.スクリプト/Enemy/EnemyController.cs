@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    const int DELAY_STARTACTION = 1600, DELAY_ACTION = 1000;
+
     [SerializeField] GameDirector director;
     [SerializeField] Vector3[] enemyPos;
     [SerializeField] EnemyScript[] enemyPrefabs;
@@ -89,9 +91,9 @@ public class EnemyController : MonoBehaviour
         EnemyAction();
     }
 
-    async void EnemyAction()
+    async Task EnemyAction()
     {
-        await Task.Delay(1600); // 1.6•b‘Ò‹@
+        await Task.Delay(DELAY_STARTACTION); // 1.6•b‘Ò‹@
 
         for (int i = 0;i < enemys.Count; i++)
         {
@@ -100,7 +102,7 @@ public class EnemyController : MonoBehaviour
             if (enemys[i].dedFlag) continue;
             await enemys[i].DoThink(turnCount);
 
-            await Task.Delay(1000); // ˆê•b‘Ò‹@
+            await Task.Delay(DELAY_ACTION); // ˆê•b‘Ò‹@
         }
 
         if (director.endGame) return;

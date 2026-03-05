@@ -30,10 +30,6 @@ public class DataBaseManager : MonoBehaviour
     private static string SaveDirectory => Application.persistentDataPath; // PC内に保存
 #endif
 
-    private void Awake()
-    {
-        // LoadData();
-    }
 
     // データ取得 ===============================================================================================================================
     public void LoadData()
@@ -209,7 +205,7 @@ public class DataBaseManager : MonoBehaviour
             }
         }
     }
-    async void GetCharaSprite(ArousalData data,string charaName, string arousalType)
+    async Task GetCharaSprite(ArousalData data,string charaName, string arousalType)
     {
         Debug.Log($"Assets/3.素材/Character/{charaName}_{arousalType}.png");
         // 検索内容を定義
