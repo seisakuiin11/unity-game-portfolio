@@ -90,17 +90,16 @@ public class CharacterScript : MonoBehaviour
     protected AttackData[,] defultAttackDatas;   // ターゲット対象
     // -----------------------------------------------------------------------
 
-    protected PlayerController playerController;
-    protected EnemyController enemyController;
-    protected EffectCliater ef;
-
-    //-----------------------------------------------------------
+    //タイミング発動効果リスト -----------------------------------------------------
     public List<Action<CharacterScript>> attackTimingAction;         // 攻撃時に行う処理
     public List<Action<CharacterScript>> defultAttackTimingAction;   // 通常攻撃時に行う処理
     public List<Action<CharacterScript>> damageTimingAction;         // 攻撃を受けたときに行う処理
-
     //-----------------------------------------------------------
     public List<BuffData> buffDatas;
+
+    protected PlayerController playerController;
+    protected EnemyController enemyController;
+    protected EffectCliater ef;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
