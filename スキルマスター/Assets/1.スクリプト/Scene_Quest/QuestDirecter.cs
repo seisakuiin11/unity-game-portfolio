@@ -164,6 +164,7 @@ public class QuestDirecter : MonoBehaviour
         partyName.text = "パーティー." + (saveIndex + 1);
         // 画像,テキスト 代入
         SaveData data = saveDatas[saveIndex];
+        Debug.Log(saveIndex);
         for (int i = 0; i < data.charaID.Length; i++)
         {
             int num = data.charaID[i] - 1;
