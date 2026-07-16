@@ -140,7 +140,10 @@ public class GameDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // デバッグ用
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Escape)) EndGame(Player.Mine);
+#endif
     }
 
     // 初期化 =========================================================================================================

@@ -25,7 +25,7 @@ public class CardTypeListUI : MonoBehaviour
     public void Init()
     {
         cards = new List<CardIconScript>() { cardPrefab };
-        var dataBase = FindAnyObjectByType<DataBaseManager>();
+        var dataBase = DataBaseManager.Instance;
         cardDatas = dataBase.GetCardData();
         charaDatas = dataBase.GetCharaData();
         cardTypeListUI.SetActive(false);

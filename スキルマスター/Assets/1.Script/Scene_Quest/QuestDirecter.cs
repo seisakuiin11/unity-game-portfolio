@@ -61,7 +61,7 @@ public class QuestDirecter : MonoBehaviour
     void Init()
     {
         // データのロード
-        var manager = FindAnyObjectByType<DataBaseManager>();
+        var manager = DataBaseManager.Instance;
         saveDatas = manager.LoadAll();
         charaDatas = manager.GetCharaData();
         cardDatas = manager.GetCardData();

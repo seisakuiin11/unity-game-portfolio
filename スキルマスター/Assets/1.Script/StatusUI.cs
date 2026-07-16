@@ -5,6 +5,10 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using CommonData;
 
+
+/// <summary>
+/// ステータス表示UI管理クラス
+/// </summary>
 public class StatusUI : MonoBehaviour
 {
     const float DefultBoxHeight = 70, PaddingUnder = 20;

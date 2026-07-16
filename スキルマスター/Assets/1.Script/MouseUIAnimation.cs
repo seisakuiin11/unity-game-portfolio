@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+/// <summary>
+/// UI操作アニメーションクラス
+/// </summary>
 public class MouseUIAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     enum AnimType

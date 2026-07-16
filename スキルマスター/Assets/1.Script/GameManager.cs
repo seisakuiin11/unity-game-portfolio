@@ -1,6 +1,9 @@
 using UnityEngine;
 using CommonData;
 
+/// <summary>
+/// ゲーム全体を管理するクラス
+/// </summary>
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
@@ -25,7 +28,6 @@ public class GameManager : MonoBehaviour
     }
     [SerializeField] SceneName[] sceneNames;
     SceneName scene;
-    [SerializeField] DataBaseManager dataBaseManager;
 
     // 各ステージのクリア状況と敵情報
     [SerializeField] Stage[] stages;
@@ -59,16 +61,23 @@ public class GameManager : MonoBehaviour
 
     void Init()
     {
+        // データベースの準備
+        DataBaseManager.Instance = new DataBaseManager();
+
         scene = sceneNames[0];
     }
 
+    /// <summary>
+    /// シーンを切り替える
+    /// </summary>
+    /// <param name="_scene"></param>
     public void LoadScene(Scene _scene)
     {
         var oldScene = scene;
         scene = sceneNames[(int)_scene];
 
         // タイトルシーンから遷移するとき、データをロード
-        if(oldScene.scene == Scene.Title) dataBaseManager.LoadData();
+        if(oldScene.scene == Scene.Title) DataBaseManager.Instance.LoadData();
 
         // Scene遷移が不必要なら(同一シーンの場合があるため)
         if (oldScene.name == scene.name) return;
@@ -77,11 +86,19 @@ public class GameManager : MonoBehaviour
     }
     public Scene GetScene() { return scene.scene; }
 
+    /// <summary>
+    /// そのステージの敵情報
+    /// </summary>
+    /// <returns></returns>
     public Stage GetStageData()
     {
         return stages[stageIndex];
     }
 
+    /// <summary>
+    /// どのステージをクリアしているか返す
+    /// </summary>
+    /// <returns></returns>
     public bool[] GetStageClearFlags()
     {
         bool[] flags = new bool[stages.Length];
@@ -94,6 +111,9 @@ public class GameManager : MonoBehaviour
         return flags;
     }
 
+    /// <summary>
+    /// ステージクリア状態にする
+    /// </summary>
     public void StageClear()
     {
         stages[stageIndex].clearFlag = true;

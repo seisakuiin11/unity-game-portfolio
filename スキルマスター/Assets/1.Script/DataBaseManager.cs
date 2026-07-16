@@ -12,8 +12,13 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-public class DataBaseManager : MonoBehaviour
+/// <summary>
+/// 各種データを取得保管するクラス
+/// </summary>
+public class DataBaseManager
 {
+    public static DataBaseManager Instance;
+
     // データ取得(DBアクセス) =======================
     [Header("Google設定")]
     string spreadsheetId = "1xeynz2aq8QwMqTc5Mw9YTLqXzMtsrnJgiDsDPdn1OVU";
@@ -31,6 +36,7 @@ public class DataBaseManager : MonoBehaviour
 
     // StreamingAssets パス
     private static string StreamingAssetsDir => Application.streamingAssetsPath;
+
 
 
     // データ取得 ===============================================================================================================================
@@ -192,7 +198,7 @@ public class DataBaseManager : MonoBehaviour
     {
         charaDatas = new List<CharaData>();
         // 潜在覚醒の情報取得 ----------------------------------------------------------------------------
-        // ① 覚醒データ読み込み
+        // 覚醒データ読み込み
         string arousalPath = Path.Combine(StreamingAssetsDir, CsvArousal);
         if (!File.Exists(arousalPath))
         {
@@ -220,7 +226,7 @@ public class DataBaseManager : MonoBehaviour
                 Debug.LogWarning($"覚醒データが重複しています: {key}");
         }
  
-        // ② キャラクターデータ読み込み
+        // キャラクターデータ読み込み
         string charaPath = Path.Combine(StreamingAssetsDir, CsvChara);
         if (!File.Exists(charaPath))
         {

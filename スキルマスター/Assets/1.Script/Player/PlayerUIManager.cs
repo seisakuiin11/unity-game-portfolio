@@ -27,6 +27,7 @@ public class PlayerUIManager : MonoBehaviour
 
     PlayerController playerController;
     int arousalSP;
+    string ArousalCardPath = "Assets/3.ëfçﬁ/ArousalCard/";
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -115,7 +116,7 @@ public class PlayerUIManager : MonoBehaviour
             texts[1].text = arousalDatas[i+1].Text;
 
             var sprt = arousalCards[i];
-            Addressables.LoadAssetAsync<Sprite>($"Assets/3.ëfçﬁ/ArousalCard/Arousal_{charID}-{i + 1}.png").Completed += handle =>
+            Addressables.LoadAssetAsync<Sprite>($"{ArousalCardPath}Arousal_{charID}-{i + 1}.png").Completed += handle =>
             {
                 if (handle.Status == AsyncOperationStatus.Succeeded)
                 {

@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     public List<CharacterScript> Init()
     {
         // キャラクター情報を取得
-        var manager = FindAnyObjectByType<DataBaseManager>();
+        var manager = DataBaseManager.Instance;
         charaDatas = manager.GetCharaData();
         int num = GameManager.Instance.saveDataIndex;
         SaveData data = manager.Load($"save{num}");

@@ -112,7 +112,7 @@ public class PartyDirecter : MonoBehaviour
 
     void Init()
     {
-        DataBaseManager dataBase = FindAnyObjectByType<DataBaseManager>();
+        var dataBase = DataBaseManager.Instance;
         charaDatas = dataBase.GetCharaData();
         cardDatas = dataBase.GetCardData();
         var datas = dataBase.LoadAll().ToArray();
@@ -408,7 +408,7 @@ public class PartyDirecter : MonoBehaviour
         
         AudioManager.Instance.EnterSE();
         // セーブ
-        FindAnyObjectByType<DataBaseManager>().Save(data, $"save{index}");
+        DataBaseManager.Instance.Save(data, $"save{index}");
         saveDatas[index] = data;
         // 新規セーブなら隣にからデータを生成
         if (index+1 < saveDatas.Length && saveDatas[index+1] == null) saveDatas[index+1] = new SaveData() { charaID = new int[3], dekki = new List<string>() };
